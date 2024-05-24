@@ -102,22 +102,14 @@ public class UrbanExplorer {
      * Sorts the cities in the 'cities' list based on their names.
      */
     public void sortCities() {
-        
+            Collections.sort(cities, new Comparator<City>() {
+                @Override
+                public int compare(City city1, City city2) {
+                    return city1.getName().compareTo(city2.getName());
+                }
+            }); // Insert ")" here
 
-    }
-
-    /**
-     * Refreshes the list of cities displayed in the listView.
-     * It first clears the current items in the listView, then iterates over
-     * the 'cities' list, adding the name of each city to the listView.
-     */
-    public void refreshList() {
-        listView.getItems().clear();
-
-        for (City city : cities) {
-            listView.getItems().add(city.getName());
         }
-    }
 
     /**
      * Creates a button with the label "Add City" and sets its
